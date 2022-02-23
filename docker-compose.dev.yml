@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  notes_server:
+    build:
+      context: .
+      target: development
+    ports:
+      - "8000:8000"
+      - "8080:8080"
+    environment:
+      - POSTGRES_URL=jdbc:postgresql://notes_postgres/notes
+    networks:
+      - notes_net
+    depends_on:
+      - notes_postgres
+
+  notes_postgres:
+    image: postgres:14.2-alpine
+    environment:
+      - POSTGRES_USER=notes
+      - POSTGRES_PASSWORD=notes
+      - POSTGRES_DB=notes
+    networks:
+      - notes_net
+    volumes:
+      - notes_data:/var/lib/postgresql/data
+volumes:
+  notes_data:
+    external: true
+networks:
+  notes_net:
+    external: true

@@ -1,0 +1,1 @@
+INSERT INTO notes (id, text) VALUES ('1e0c1d04-85ce-4a53-b6ed-0902baec3918', 'Some text for test note');

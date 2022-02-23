@@ -1,0 +1,4 @@
+CREATE TABLE notes (
+    id UUID PRIMARY KEY,
+    text VARCHAR(256) NOT NULL
+);
