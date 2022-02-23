@@ -1,11 +1,12 @@
 # Docker Java example project
-## Introduction
+
 An example of a Java project based on Spring Boot with the simplest rest api.
 The project run from docker container together with the Postgres database 
 from another container. Both containers are connected with bridge docker network.
+
 -------------------
 
-##Build and Run via classic Docker
+## Build and Run via classic Docker
 ### Build Docker image:
 ```shell
 > cd /path/to/this/project
